@@ -21,6 +21,9 @@
     "name": "skachkiss"
   },
   "main": "index.js",
+  "engines": {
+    "node": ">=20.15"
+  },
   "scripts": {
     "build": "tsc && gulp build:icons",
     "dev": "tsc --watch",

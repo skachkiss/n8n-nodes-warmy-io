@@ -1,0 +1,18 @@
+{
+	"node": "n8n-nodes-warmy-io.warmy",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Marketing"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://www.warmy.io/api-documentation"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/skachkiss/n8n-nodes-warmy-io#readme"
+			}
+		]
+	}
+}
