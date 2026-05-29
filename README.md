@@ -26,18 +26,12 @@ In your n8n instance: **Settings → Community Nodes → Install** and enter:
 n8n-nodes-warmy-io
 ```
 
-Currently published under the `alpha` dist-tag. To pin the latest pre-release explicitly:
-
-```
-n8n-nodes-warmy-io@alpha
-```
-
 ### Manual install (self-hosted n8n)
 
 ```bash
 cd ~/.n8n/custom
 npm init -y                          # only if ~/.n8n/custom is empty
-npm install n8n-nodes-warmy-io@alpha
+npm install n8n-nodes-warmy-io
 n8n start
 ```
 
@@ -48,7 +42,7 @@ In the browser open `http://localhost:5678`, create a workflow, and search for t
 1. In n8n: **Credentials → New → Warmy API**.
 2. Fill in:
    - **API Token** — generate on warmy.io → Workspace → Settings → API Keys.
-   - **Holder UID** — shown next to your API token on the same page.
+   - **Holder UID** — get it from [warmy.io/api-documentation](https://www.warmy.io/api-documentation).
 3. Press **Test** — should return success.
 
 ## Local development

@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-warmy-io",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0",
   "description": "n8n community node for Warmy.io email warmup API",
   "keywords": [
     "n8n-community-node-package",

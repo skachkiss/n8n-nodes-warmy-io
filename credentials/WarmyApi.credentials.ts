@@ -35,7 +35,7 @@ export class WarmyApi implements ICredentialType {
 			default: '',
 			required: true,
 			description:
-				'Workspace identifier sent in the Holder-Uid header. Find it on warmy.io → Workspace → Settings → API Keys (shown next to your API token).',
+				'Workspace identifier sent in the Holder-Uid header. Get it from https://www.warmy.io/api-documentation.',
 		},
 	];
 
