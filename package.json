@@ -18,7 +18,8 @@
     "url": "https://github.com/skachkiss/n8n-nodes-warmy-io/issues"
   },
   "author": {
-    "name": "skachkiss"
+    "name": "skachkiss",
+    "email": "vadimz@warmy.io"
   },
   "main": "index.js",
   "engines": {
