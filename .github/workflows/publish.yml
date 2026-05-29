@@ -1,0 +1,48 @@
+name: Publish to npm
+
+# Publishes the package to npm with a signed provenance statement.
+# Required for n8n verified community nodes (from 2026-05-01, n8n only
+# accepts nodes published via CI with provenance — not from a local machine).
+#
+# Release flow:
+#   1. Bump the version (npm version <x.y.z>) and push the commit + tag.
+#   2. Create a GitHub Release for that tag (Releases → Draft a new release).
+#   3. Publishing the release triggers this workflow.
+# Or run it manually via the "Run workflow" button (workflow_dispatch).
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write # required for npm provenance (OIDC signing)
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22 # n8n's isolated-vm needs Node 22 LTS (won't build on 25+)
+          registry-url: https://registry.npmjs.org
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Publish to npm (with provenance)
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
